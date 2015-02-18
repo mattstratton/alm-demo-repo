@@ -6,3 +6,5 @@ description      'Installs/Configures my_awesome_app'
 long_description 'Installs/Configures my_awesome_app'
 version          '0.1.0'
 
+depends          'windows', '~> 1.36.1'
+depends          'iis', '~> 4.0.0'
