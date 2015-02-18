@@ -7,7 +7,7 @@
 # install various roles and features
 
 %w[
-NetFx3
+NetFx4
 IIS-WebServerRole
 IIS-WebServer
 IIS-DefaultDocument
@@ -38,6 +38,7 @@ user node['my_awesome_app']['apppooluser'] do
 end
 
 directory "#{node['my_awesome_app']['webroot']}#{node['my_awesome_app']['sitename']}" do
+  recursive true
   action :create
 end
 
