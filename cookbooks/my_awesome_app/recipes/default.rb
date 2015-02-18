@@ -61,3 +61,8 @@ iis_pool node['my_awesome_app']['sitename'] do
   pool_password node['my_awesome_app']['apppoolpassword']
   action :add
 end
+
+service "iis" do
+  service_name "W3SVC"
+  action [:enable, :start]
+end
