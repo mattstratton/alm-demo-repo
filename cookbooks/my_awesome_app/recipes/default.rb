@@ -6,12 +6,10 @@
 
 # install various roles and features
 
-# reminder - NetFX3 is a total PITA because the source files are NOT on the damn machine. 
-
 %w[
 NetFx3
 IIS-WebServerRole
-IIS-WebServer 
+IIS-WebServer
 IIS-DefaultDocument
 IIS-StaticContent
 IIS-HttpErrors
@@ -52,12 +50,12 @@ iis_site node['my_awesome_app']['sitename'] do
   protocol :http
   port 80
   path "#{node['my_awesome_app']['webroot']}#{node['my_awesome_app']['sitename']}"
-  action [:add,:start]
+  action [:add, :start]
 end
 
 # creates a new app pool
 iis_pool node['my_awesome_app']['sitename'] do
-  runtime_version "4.0"
+  runtime_version '4.0'
   pipeline_mode :Integrated
   pool_username node['my_awesome_app']['apppooluser']
   pool_password node['my_awesome_app']['apppoolpassword']
