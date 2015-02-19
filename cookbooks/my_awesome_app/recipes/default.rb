@@ -8,6 +8,7 @@
 
 %w[
 NetFx4
+NetFx4Extended-ASPNET45
 IIS-WebServerRole
 IIS-WebServer
 IIS-DefaultDocument
@@ -24,11 +25,12 @@ IIS-WindowsAuthentication
 IIS-HttpCompressionStatic
 IIS-ManagementConsole
 IIS-ManagementService
-IIS-NetFxExtensibility
-IIS-ASPNET
+IIS-NetFxExtensibility45
+IIS-ASPNET45
 ].each do |feature|
   windows_feature feature do
     action :install
+    all true
   end
 end
 
